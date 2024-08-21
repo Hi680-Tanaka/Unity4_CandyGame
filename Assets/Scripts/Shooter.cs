@@ -49,11 +49,7 @@ public class Shooter : MonoBehaviour
         if (shotPower <= 0) return;
 
         // プレハブからCandyオブジェクトを生成
-        GameObject candy = (GameObject)Instantiate(
-            SampleCandy(),
-            GetInstantiatePosition(),
-            Quaternion.identity
-            );
+        GameObject candy = (GameObject)Instantiate(SampleCandy(),GetInstantiatePosition(),Quaternion.identity);
 
         // 生成したCandyオブジェクトの親をcandyParentTransformに設定する
         candy.transform.parent = candyParentTransform;
