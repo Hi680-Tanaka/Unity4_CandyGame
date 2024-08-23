@@ -136,6 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59027892}
+  - component: {fileID: 59027893}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -158,6 +159,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &59027893
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59027890}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -5062364741005114090, guid: de36e547c3968924da45f790f0643c1b, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8d88783da1c204ab2b2fb8fb74aa13c5, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &62366308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -357,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 80416309}
   - component: {fileID: 80416310}
+  - component: {fileID: 80416311}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -391,12 +489,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b25502ad0914b98ba40b11f63ee48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyPrefabs: []
-  candyParentTransform: {fileID: 0}
-  candyManager: {fileID: 0}
-  shotForce: 560
+  candyPrefabs:
+  - {fileID: 6458471899171954486, guid: 99182995401584d2bbb6f2714787f04c, type: 3}
+  - {fileID: 6458471899171954486, guid: a7ef5b35cb2e84f2c96d1313cdf34746, type: 3}
+  - {fileID: 6458471899171954486, guid: 10939674bc90d47ca97247daab0c5393, type: 3}
+  - {fileID: 6458471899171954486, guid: d15b84c0fd0864ec2bcaf7f7a3cae056, type: 3}
+  candyParentTransform: {fileID: 1904141749}
+  candyManager: {fileID: 1491382707}
+  shotForce: 500
   shotTorque: 30
   baseWidth: 0
+--- !u!82 &80416311
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80416307}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -3713422624079402669, guid: de36e547c3968924da45f790f0643c1b, type: 2}
+  m_audioClip: {fileID: 8300000, guid: d6b3ded510f844204a9f62001cece7d6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &108485121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6458471899171848982, guid: 10939674bc90d47ca97247daab0c5393, type: 3}
@@ -1973,6 +2171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083196249}
   - component: {fileID: 1083196251}
+  - component: {fileID: 1083196252}
   m_Layer: 0
   m_Name: CandyDestroyerReward3
   m_TagString: Untagged
@@ -2016,6 +2215,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1083196252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083196248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8e691ce13a544b78b74ba7bd065baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candyManager: {fileID: 1491382707}
+  reward: 0
+  effectPrefab: {fileID: 7509961019487086422, guid: e67aed492b6324bad86bea5866646306, type: 3}
+  effectRotation: {x: -90, y: 0, z: 0}
 --- !u!1 &1113418549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +3102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491382706}
+  - component: {fileID: 1491382707}
   m_Layer: 0
   m_Name: CandyManager
   m_TagString: Untagged
@@ -2902,13 +3118,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491382704}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491382707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491382704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b218a85f9d8cf471c96012e0756e3131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candy: 30
 --- !u!1001 &1562680250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3949,6 +4178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1915386886}
   - component: {fileID: 1915386885}
+  - component: {fileID: 1915386887}
   m_Layer: 0
   m_Name: CandyDestroyerReward0
   m_TagString: Untagged
@@ -3992,6 +4222,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 159000209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915386887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915386883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8e691ce13a544b78b74ba7bd065baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candyManager: {fileID: 1491382707}
+  reward: 0
+  effectPrefab: {fileID: 0}
+  effectRotation: {x: 0, y: 0, z: 0}
 --- !u!1001 &1936504759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4385,6 +4631,6 @@ SceneRoots:
   - {fileID: 1703576471}
   - {fileID: 1904141749}
   - {fileID: 80416309}
-  - {fileID: 1491382706}
-  - {fileID: 159000209}
   - {fileID: 59027892}
+  - {fileID: 159000209}
+  - {fileID: 1491382706}

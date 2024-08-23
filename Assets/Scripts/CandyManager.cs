@@ -12,6 +12,7 @@ public class CandyManager : MonoBehaviour
     // ストック回復までの残り秒数 
     int counter;
 
+    //キャンディの消費
     public void ConsumeCandy()
     {
         if (candy > 0) candy--;
@@ -22,6 +23,7 @@ public class CandyManager : MonoBehaviour
         return candy;
     }
 
+    //
     public void AddCandy(int amount)
     {
         candy += amount;

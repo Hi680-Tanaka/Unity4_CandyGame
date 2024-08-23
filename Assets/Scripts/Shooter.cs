@@ -35,7 +35,7 @@ public class Shooter : MonoBehaviour
 
     // キャンディのプレハブからランダムに1つ選ぶ※voidじゃなくGameObjectが返ってくる
     //配列candyPrefabsの中からランダムにオブジェクトを1個取り出す
-    GameObject sampleCandy()
+    GameObject SampleCandy()
     {
         int index = Random.Range(0, candyPrefabs.Length);
         return candyPrefabs[index];
@@ -59,7 +59,10 @@ public class Shooter : MonoBehaviour
         if (shotPower <= 0) return;
 
         // プレハブからCandyオブジェクトを生成※①Candyの生成Instantiate（対象物、位置、回転）
-        GameObject candy = (GameObject)Instantiate(SampleCandy(),GetInstantiatePosition(),Quaternion.identity);
+        GameObject candy = (GameObject)Instantiate(
+            SampleCandy(), 
+            GetInstantiatePosition(), 
+            Quaternion.identity);
 
         // 生成したCandyオブジェクトの親をcandyParentTransformに設定する
         candy.transform.parent = candyParentTransform;
@@ -95,8 +98,8 @@ public class Shooter : MonoBehaviour
     void ConsumePower()
     {
         // ShotPowerを消費すると同時に回復のカウントをスタート
-        shotPower--;
-        StartCoroutine(RecoverPower());
+        shotPower--;//POWERを1減らす
+        StartCoroutine(RecoverPower());//コルーチン（回復）
     }
 
     IEnumerator RecoverPower()
