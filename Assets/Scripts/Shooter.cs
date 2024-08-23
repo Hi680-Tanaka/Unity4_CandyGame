@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    const int MaxShotPower = 5;
-    const int RecoverySeconds = 3;
+    const int MaxShotPower = 5;//最大（5）連続投入できる設定
+    const int RecoverySeconds = 3;//回復までのタイム
 
-    int shotPower = MaxShotPower;
+    int shotPower = MaxShotPower;//MaxShotPowerで設定した数がそのままshotパワーになっている
+
     AudioSource shotSound;
 
-    public GameObject[] candyPrefabs;
-    public Transform candyParentTransform;
-    public CandyManager candyManager;
-    public float shotForce;
-    public float shotTorque;
-    public float baseWidth;
+    //public GameObject[] candyPrefab;//Instantiateで生成する対象
+    public GameObject[] candyPrefabs;//Instantiateで生成する対象（配列）
+    public Transform candyParentTransform;//生成されたCandyの親役
+
+    public CandyManager candyManager;//CandyManagerクラスの変数を使えるようにする
+
+
+    public float shotForce;//AddForceで使うパワー
+    public float shotTorque;//AddTorqueで使う回転力
+    public float baseWidth;//Candyが飛んでいく位置の上限幅 "5"の幅をめがけて飛んでいく
 
     void Start()
     {
@@ -24,16 +29,21 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
+        //特定のボタンが押された時にShot()メソッドを発動
         if (Input.GetButtonDown("Fire1")) Shot();
     }
 
-    // キャンディのプレハブからランダムに1つ選ぶ
-    GameObject SampleCandy()
+    // キャンディのプレハブからランダムに1つ選ぶ※voidじゃなくGameObjectが返ってくる
+    //配列candyPrefabsの中からランダムにオブジェクトを1個取り出す
+    GameObject sampleCandy()
     {
         int index = Random.Range(0, candyPrefabs.Length);
         return candyPrefabs[index];
     }
 
+    //voidじゃなくVector3が返ってくる
+    //マウスが押された位置と連動するようにBaseのどこをめがけてCandyを飛ばすか、
+    //その位置を決めている
     Vector3 GetInstantiatePosition()
     {
         // 画面のサイズとInputの割合からキャンディ生成のポジションを計算
@@ -48,15 +58,18 @@ public class Shooter : MonoBehaviour
         if (candyManager.GetCandyAmount() <= 0) return;
         if (shotPower <= 0) return;
 
-        // プレハブからCandyオブジェクトを生成
+        // プレハブからCandyオブジェクトを生成※①Candyの生成Instantiate（対象物、位置、回転）
         GameObject candy = (GameObject)Instantiate(SampleCandy(),GetInstantiatePosition(),Quaternion.identity);
 
         // 生成したCandyオブジェクトの親をcandyParentTransformに設定する
         candy.transform.parent = candyParentTransform;
 
-        // CadnyオブジェクトのRigidbodyを取得し力と回転を加える
+        // CadnyオブジェクトのRigidbodyを取得し力と回転を加える※②生成したCandyのRigidbodyを使えるようにしている
+        //transform.forward→オブジェクトの前方
         Rigidbody candyRigidBody = candy.GetComponent<Rigidbody>();
+        //※③生成したCandyにAddForce()メソッドをかけて飛ばしている
         candyRigidBody.AddForce(transform.forward * shotForce);
+        //④横にスピンさせる力
         candyRigidBody.AddTorque(new Vector3(0, shotTorque, 0));
 
         // Candyのストックを消費
